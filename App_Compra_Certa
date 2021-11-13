@@ -1,0 +1,46 @@
+using System;
+using System.Globalization;
+
+namespace Compra_certa
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int qtd;
+            double valor, total, parcelas;
+            string nome;
+
+            Console.WriteLine("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+            Console.WriteLine("                      App Compra Certa                       ");
+            Console.WriteLine("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+
+            Console.Write(" Insira o nome do produto: ");
+            nome = Console.ReadLine();
+            Console.Write(" Insira o valor do produto em R$: ");
+            valor = double.Parse(Console.ReadLine());
+            Console.Write(" Insira a quantidade comprada: ");
+            qtd = int.Parse(Console.ReadLine());
+
+            total = qtd * valor;
+            parcelas = total / 3;
+
+            if(total < 300)
+            {
+                Console.WriteLine("Valor total da compra R$: " + total.ToString("F2", CultureInfo.InvariantCulture));
+                Console.WriteLine("Valor das parcelas R$: " + parcelas.ToString("F2", CultureInfo.InvariantCulture));
+                Console.WriteLine("Cliente Mediano!!");
+            }
+            else
+            {
+                Console.WriteLine("Valor total da compra R$: " + total.ToString("F2", CultureInfo.InvariantCulture));
+                Console.WriteLine("Valor das parcelas R$: " + parcelas.ToString("F2", CultureInfo.InvariantCulture));
+                Console.WriteLine("Bom Cliente!!");
+            }
+
+            Console.ReadLine();
+            
+            // Aluno: Caio dos Santos Alves 1°DS turma B
+        }
+    }
+}
